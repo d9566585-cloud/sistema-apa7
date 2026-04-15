@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagramas UML - APA</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#1f2a44; --accent:#22316c; --muted:#5e6b8a; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); }
+    header { background:linear-gradient(90deg,#22316c,#2d3f86); color:#fff; padding:32px 24px; }
+    header h1 { margin:0; font-size:32px; }
+    header p { margin:8px 0 0; opacity:.9; }
+    main { max-width:1400px; margin:0 auto; padding:24px; }
+    .grid { display:grid; grid-template-columns:1fr; gap:24px; }
+    .card { background:var(--card); border-radius:18px; box-shadow:0 10px 30px rgba(22,34,72,.08); padding:24px; overflow:auto; }
+    .card h2 { margin:0 0 12px; color:var(--accent); font-size:22px; }
+    .card p { margin:0 0 16px; color:var(--muted); }
+    .mermaid { background:#fff; border-radius:12px; }
+    .download { display:inline-block; margin:16px 0 0; padding:14px 20px; background:#22316c; color:#fff; text-decoration:none; border-radius:12px; font-weight:700; }
+    .note { font-size:14px; color:var(--muted); margin-top:10px; }
+    @media (min-width: 1100px) { .grid { grid-template-columns:1fr 1fr; } .full { grid-column:1 / -1; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diagramas UML del sistema APA</h1>
+    <p>Diagrama de clases y diagrama de casos de uso, listos para descargar y abrir en cualquier navegador.</p>
+  </header>
+  <main>
+    <div class="grid">
+      <section class="card full">
+        <h2>Diagrama de Clases</h2>
+        <p>Basado en el archivo adjunto, con una estructura más limpia, profesional y legible.</p>
+        <div class="mermaid">
+classDiagram
+class Usuario {
+  -int id
+  -String nombre
+  -String email
+  -String contraseña
+  -String rol
+  +registrar()
+  +autenticar()
+  +actualizarPerfil()
+}
+class Documento {
+  -int id
+  -String nombre
+  -Date fechaCarga
+  -String formatoOriginal
+  -String estado
+  +cargar()
+  +analizar()
+  +descargar()
+}
+class AnalizadorAPA {
+  -List~ReglaAPA~ reglasAPA
+  -String version
+  +analizarEstructura()
+  +verificarFormato()
+  +verificarCitas()
+  +verificarReferencias()
+}
+class Normalizador {
+  -Config configuracion
+  -Regla reglaActiva
+  +aplicarFormato()
+  +normalizarTitulos()
+  +normalizarCitas()
+  +normalizarReferencias()
+  +generarDocumento()
+}
+class ReporteCorrecciones {
+  -int id
+  -Date fecha
+  -int totalErrores
+  -List~String~ detalleErrores
+  +generar()
+  +exportarPDF()
+  +consultarDetalle()
+}
+class ReglaAPA {
+  -int id
+  -String categoria
+  -String descripcion
+  -String valorEsperado
+  +validar()
+  +obtenerMensaje()
+}
+class Configuracion {
+  -float margen
+  -String fuente
+  -float interlineado
+  -int nivelTitulos
+  +cargarDefecto()
+  +personalizar()
+}
+Usuario --> Documento : carga
+Documento --> AnalizadorAPA : se analiza con
+AnalizadorAPA --> ReglaAPA : usa
+Documento --> Normalizador : se normaliza con
+Normalizador --> Configuracion : aplica
+AnalizadorAPA --> ReporteCorrecciones : genera
+Normalizador --> ReporteCorrecciones : genera
+        </div>
+      </section>
+      <section class="card full">
+        <h2>Diagrama de Casos de Uso</h2>
+        <p>Representa las interacciones principales entre el usuario y el sistema para validar, normalizar y exportar documentos APA.</p>
+        <div class="mermaid">
+flowchart LR
+  actor((Usuario))
+  subgraph S["Sistema de validación y normalización APA"]
+    CU1["Registrarse"]
+    CU2["Autenticarse"]
+    CU3["Cargar documento"]
+    CU4["Analizar documento"]
+    CU5["Verificar formato APA"]
+    CU6["Verificar citas y referencias"]
+    CU7["Normalizar títulos y citas"]
+    CU8["Generar reporte de correcciones"]
+    CU9["Exportar PDF"]
+    CU10["Descargar documento final"]
+    CU11["Personalizar configuración"]
+  end
+  actor --> CU1
+  actor --> CU2
+  actor --> CU3
+  actor --> CU11
+  CU3 --> CU4
+  CU4 --> CU5
+  CU4 --> CU6
+  CU7 --> CU8
+  CU4 --> CU8
+  CU8 --> CU9
+  CU7 --> CU10
+  CU9 --> CU10
+        </div>
+      </section>
+    </div>
+    <a class="download" href="index.html" download="index.html">Descargar index.html</a>
+    <div class="note">Abre este archivo en tu navegador para ver los diagramas. Si quieres, también puedes pegarlo en tu proyecto web sin cambios.</div>
+  </main>
+  <script>
+    mermaid.initialize({ startOnLoad:true, theme:'base', securityLevel:'loose', themeVariables:{ fontFamily:'Arial', primaryColor:'#e9eefc', primaryTextColor:'#1f2a44', primaryBorderColor:'#22316c', lineColor:'#22316c' } });
+  </script>
+</body>
+</html>
