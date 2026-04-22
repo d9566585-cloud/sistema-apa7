@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Secuencia - Normalizar Documento</title>
+<style>
+body { font-family: Arial; background: #f4f4f4; text-align: center; }
+.linea { display: inline-block; margin: 0 20px; }
+.caja { border: 2px solid #000; padding: 10px; background: #fff; }
+.flecha { margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<h2>Diagrama de Secuencia - Normalizar Documento</h2>
+
+<div class="linea"><div class="caja">Estudiante / Docente</div></div>
+<div class="linea"><div class="caja">Interfaz</div></div>
+<div class="linea"><div class="caja">Controlador</div></div>
+<div class="linea"><div class="caja">Analizador</div></div>
+<div class="linea"><div class="caja">Normalizador APA</div></div>
+<div class="linea"><div class="caja">Base de Datos</div></div>
+
+<div class="flecha">↓ Cargar documento</div>
+<div class="flecha">Interfaz → Controlador</div>
+<div class="flecha">Controlador → Analizador</div>
+<div class="flecha">Analizador → Detectar errores</div>
+<div class="flecha">Analizador → Normalizador</div>
+<div class="flecha">Normalizador → Aplicar reglas APA</div>
+<div class="flecha">Normalizador → Base de Datos</div>
+<div class="flecha">Base de Datos → Guardar resultado</div>
+<div class="flecha">Controlador → Interfaz</div>
+<div class="flecha">Interfaz → Usuario (Descargar documento)</div>
+
+</body>
+</html>

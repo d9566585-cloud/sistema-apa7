@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Actividades - Sistema APA</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+}
+.box {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 10px;
+}
+.decision {
+    width: 200px;
+    margin: auto;
+    transform: rotate(45deg);
+}
+.decision span {
+    display: block;
+    transform: rotate(-45deg);
+}
+.arrow {
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Diagrama de Actividades</h2>
+
+<div class="box">Inicio</div>
+<div class="arrow">↓</div>
+
+<div class="box">Cargar documento Word (.docx)</div>
+<div class="arrow">↓</div>
+
+<div class="box">Validar archivo</div>
+<div class="arrow">↓</div>
+
+<div class="decision"><span>¿Archivo válido?</span></div>
+
+<div class="arrow">↓ Sí</div>
+<div class="box">Analizar documento</div>
+
+<div class="arrow">↓</div>
+<div class="box">Detectar errores APA</div>
+
+<div class="arrow">↓</div>
+<div class="box">Aplicar correcciones</div>
+
+<div class="arrow">↓</div>
+<div class="box">Generar documento corregido</div>
+
+<div class="arrow">↓</div>
+<div class="box">Descargar documento</div>
+
+<div class="arrow">↓</div>
+<div class="box">Fin</div>
+
+<br><br>
+
+<div class="arrow">No ↓</div>
+<div class="box">Mostrar error al usuario</div>
+
+</body>
+</html>

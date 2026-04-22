@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Clases - Sistema APA</title>
+<style>
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.clase {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 260px;
+    background: white;
+}
+.titulo {
+    background: #34495e;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.seccion {
+    padding: 10px;
+    border-top: 1px solid black;
+    font-size: 14px;
+}
+.relaciones {
+    margin-top: 30px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Diagrama de Clases - Sistema de Normalización APA 7</h2>
+
+<div class="container">
+
+<div class="clase">
+<div class="titulo">Usuario</div>
+<div class="seccion">
+- idUsuario<br>
+- nombre<br>
+- correo<br>
+- rol
+</div>
+<div class="seccion">
++ iniciarSesion()<br>
++ cerrarSesion()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">Documento</div>
+<div class="seccion">
+- idDocumento<br>
+- nombreArchivo<br>
+- contenido<br>
+- estado
+</div>
+<div class="seccion">
++ subir()<br>
++ analizar()<br>
++ descargar()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">AnalizadorDocumento</div>
+<div class="seccion">
+- erroresDetectados<br>
+</div>
+<div class="seccion">
++ analizarFormato()<br>
++ detectarErrores()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">NormalizadorAPA</div>
+<div class="seccion">
+- reglasAPA
+</div>
+<div class="seccion">
++ aplicarFormato()<br>
++ corregirCitas()<br>
++ normalizarReferencias()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">Cita</div>
+<div class="seccion">
+- autor<br>
+- año<br>
+- contenido
+</div>
+<div class="seccion">
++ validarCita()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">ReferenciaBibliografica</div>
+<div class="seccion">
+- autor<br>
+- año<br>
+- titulo<br>
+- fuente
+</div>
+<div class="seccion">
++ generarReferencia()
+</div>
+</div>
+
+<div class="clase">
+<div class="titulo">ReporteCorreccion</div>
+<div class="seccion">
+- listaErrores<br>
+- sugerencias
+</div>
+<div class="seccion">
++ generarReporte()
+</div>
+</div>
+
+</div>
+
+<div class="relaciones">
+<p><b>Relaciones del sistema:</b></p>
+<p>Usuario → Documento</p>
+<p>Documento → AnalizadorDocumento</p>
+<p>AnalizadorDocumento → NormalizadorAPA</p>
+<p>NormalizadorAPA → Cita</p>
+<p>NormalizadorAPA → ReferenciaBibliografica</p>
+<p>NormalizadorAPA → ReporteCorreccion</p>
+</div>
+
+</body>
+</html>

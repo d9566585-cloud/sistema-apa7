@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Modelo Relacional APA</title>
+<style>
+body { font-family: Arial; text-align: center; }
+.tabla {
+    display: inline-block;
+    border: 2px solid black;
+    margin: 15px;
+    padding: 10px;
+    background: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Modelo Relacional - Sistema APA</h2>
+
+<div class="tabla">
+<b>Usuario</b><br>
+idUsuario (PK)<br>
+nombre<br>
+correo<br>
+rol
+</div>
+
+<div class="tabla">
+<b>Documento</b><br>
+idDocumento (PK)<br>
+nombreArchivo<br>
+estado<br>
+idUsuario (FK)
+</div>
+
+<div class="tabla">
+<b>Correccion</b><br>
+idCorreccion (PK)<br>
+descripcion<br>
+tipoError<br>
+idDocumento (FK)
+</div>
+
+<div class="tabla">
+<b>Referencia</b><br>
+idReferencia (PK)<br>
+autor<br>
+año<br>
+titulo<br>
+idDocumento (FK)
+</div>
+
+<p>Relaciones: Usuario 1:N Documento | Documento 1:N Corrección | Documento 1:N Referencia</p>
+
+</body>
+</html>
