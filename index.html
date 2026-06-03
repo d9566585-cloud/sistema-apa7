@@ -1,67 +1,401 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Sistema APA 7</title>
-
-<style>
-body {
-    font-family: Arial;
-    background-color: #f4f4f4;
-    margin: 0;
-}
-header {
-    background: #0a3d62;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-section {
-    padding: 20px;
-}
-.card {
-    background: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema APA 7 | Prototipo Funcional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <div class="app-shell">
+    <!-- Menú lateral principal -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand__logo">APA</div>
+        <div>
+          <h1>Sistema APA 7</h1>
+          <p>Validación académica</p>
+        </div>
+      </div>
 
-<header>
-<h1>Sistema Automatizado APA 7</h1>
-<p>Normalización de documentos académicos</p>
-</header>
+      <nav class="sidebar__nav">
+        <button class="nav-link active" data-target="inicio">Inicio</button>
+        <button class="nav-link" data-target="dashboard">Dashboard</button>
+        <button class="nav-link" data-target="validacion">Validar documento</button>
+        <button class="nav-link" data-target="riesgos">Gestión de riesgos</button>
+        <button class="nav-link" data-target="reportes">Reportes</button>
+        <button class="nav-link" data-target="acerca">Acerca del proyecto</button>
+      </nav>
 
-<section>
+      <div class="sidebar__footer">
+        <span class="status-dot"></span>
+        <p>Prototipo listo para presentación</p>
+      </div>
+    </aside>
 
-<div class="card">
-<h2>Descripción</h2>
-<p>Este sistema permite normalizar documentos bajo normas APA 7.</p>
-</div>
+    <main class="main-content">
+      <!-- Encabezado superior -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <div>
+          <p class="eyebrow">Proyecto universitario de Ingeniería de Software</p>
+          <h2>Automatización y Validación de Normas APA 7</h2>
+        </div>
+        <div class="topbar__badge">Sin backend · HTML/CSS/JS</div>
+      </header>
 
-<div class="card">
-<h2>Problema</h2>
-<p>Los estudiantes cometen errores en normas APA.</p>
-</div>
+      <!-- Página de inicio -->
+      <section class="view active" id="inicio">
+        <div class="hero">
+          <div class="hero__content">
+            <span class="pill">Prototipo académico funcional</span>
+            <h3>Verifica el cumplimiento de normas APA 7 de forma rápida, visual y profesional.</h3>
+            <p>
+              Este sistema simula una plataforma web orientada a estudiantes y docentes para revisar la estructura,
+              formato, citaciones y referencias de documentos académicos bajo el estándar APA 7.
+            </p>
+            <div class="hero__actions">
+              <button class="btn btn--primary" data-go="dashboard">Ingresar al Sistema</button>
+              <button class="btn btn--secondary" data-go="validacion">Probar validación</button>
+            </div>
+          </div>
 
-<div class="card">
-<h2>Solución</h2>
-<p>Automatizar la corrección de documentos.</p>
-</div>
+          <div class="hero__panel">
+            <div class="mini-card">
+              <span class="mini-card__label">Cobertura</span>
+              <strong>Formato, citas y referencias</strong>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__label">Compatibilidad</span>
+              <strong>GitHub + Netlify + local</strong>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__label">Experiencia</span>
+              <strong>Dashboard corporativo responsive</strong>
+            </div>
+          </div>
+        </div>
 
-</section>
+        <div class="benefits-grid">
+          <article class="feature-card">
+            <h4>Corrección guiada</h4>
+            <p>Visualiza errores frecuentes en portada, márgenes, interlineado, citaciones y referencias.</p>
+          </article>
+          <article class="feature-card">
+            <h4>Ahorro de tiempo</h4>
+            <p>Reduce el esfuerzo manual durante la revisión de trabajos académicos en distintas áreas.</p>
+          </article>
+          <article class="feature-card">
+            <h4>Experiencia moderna</h4>
+            <p>Diseño profesional con navegación lateral, tarjetas informativas y resultados claros.</p>
+          </article>
+        </div>
+      </section>
 
+      <!-- Dashboard principal -->
+      <section class="view" id="dashboard">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Panel principal</p>
+            <h3>Dashboard general</h3>
+          </div>
+          <span class="section-badge">Indicadores simulados</span>
+        </div>
+
+        <div class="cards-grid">
+          <article class="stat-card">
+            <span>Documentos analizados</span>
+            <strong class="counter" data-target="128">0</strong>
+            <p>Trabajos revisados durante el último periodo.</p>
+          </article>
+          <article class="stat-card">
+            <span>Errores APA detectados</span>
+            <strong class="counter" data-target="342">0</strong>
+            <p>Incidencias registradas entre formato y referencias.</p>
+          </article>
+          <article class="stat-card">
+            <span>Nivel promedio de cumplimiento</span>
+            <strong class="counter" data-target="87">0</strong>
+            <p>Porcentaje general de conformidad alcanzado.</p>
+          </article>
+          <article class="stat-card stat-card--accent">
+            <span>Tiempo de respuesta</span>
+            <strong>&lt; 10 s</strong>
+            <p>Meta de procesamiento por documento en el prototipo.</p>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel-card">
+            <div class="panel-card__header">
+              <h4>Estado de cumplimiento</h4>
+              <span>87%</span>
+            </div>
+            <div class="progress-circle">
+              <div class="progress-circle__inner">87%</div>
+            </div>
+            <p class="muted">La mayoría de los documentos cumplen con la estructura general, pero persisten fallos en citas y referencias.</p>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-card__header">
+              <h4>Distribución de hallazgos</h4>
+              <span>Última revisión</span>
+            </div>
+            <div class="bars">
+              <div class="bar-item">
+                <label>Formato general</label>
+                <div class="bar"><span style="width: 92%"></span></div>
+              </div>
+              <div class="bar-item">
+                <label>Portada</label>
+                <div class="bar"><span style="width: 95%"></span></div>
+              </div>
+              <div class="bar-item">
+                <label>Citaciones</label>
+                <div class="bar"><span style="width: 74%"></span></div>
+              </div>
+              <div class="bar-item">
+                <label>Referencias</label>
+                <div class="bar"><span style="width: 68%"></span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Módulo validar documento -->
+      <section class="view" id="validacion">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Módulo de análisis</p>
+            <h3>Validar documento</h3>
+          </div>
+          <span class="section-badge">Simulación interactiva</span>
+        </div>
+
+        <div class="validation-layout">
+          <article class="panel-card">
+            <h4>Formulario de validación</h4>
+            <form id="validationForm" class="validation-form">
+              <div class="form-group">
+                <label for="titulo">Título del trabajo</label>
+                <input type="text" id="titulo" placeholder="Ej. Sistema de automatización APA 7" required />
+              </div>
+
+              <div class="form-group">
+                <label for="autor">Autor</label>
+                <input type="text" id="autor" placeholder="Nombre del estudiante" required />
+              </div>
+
+              <div class="form-group">
+                <label for="tipoDocumento">Tipo de documento</label>
+                <select id="tipoDocumento" required>
+                  <option value="">Seleccione...</option>
+                  <option>Trabajo de grado</option>
+                  <option>Artículo académico</option>
+                  <option>Ensayo</option>
+                  <option>Informe de investigación</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="area">Área académica</label>
+                <select id="area" required>
+                  <option value="">Seleccione...</option>
+                  <option>Ingeniería de Software</option>
+                  <option>Ciencias Sociales</option>
+                  <option>Administración</option>
+                  <option>Educación</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">Analizar Documento</button>
+            </form>
+          </article>
+
+          <article class="panel-card" id="resultsCard">
+            <div class="results-placeholder" id="resultsPlaceholder">
+              <h4>Resultados de validación</h4>
+              <p>Completa el formulario y pulsa <strong>Analizar Documento</strong> para visualizar un resultado simulado del sistema.</p>
+            </div>
+
+            <div class="results hidden" id="resultsContent">
+              <div class="result-header">
+                <div>
+                  <p class="eyebrow">Informe de revisión</p>
+                  <h4 id="resultTitle">Documento analizado</h4>
+                </div>
+                <div class="compliance-badge" id="complianceBadge">88% cumplimiento</div>
+              </div>
+
+              <div class="check-list">
+                <div class="check-item success">✓ Portada correcta</div>
+                <div class="check-item success">✓ Márgenes correctos</div>
+                <div class="check-item success">✓ Interlineado correcto</div>
+                <div class="check-item warning">⚠ Citaciones incompletas</div>
+                <div class="check-item warning">⚠ Referencias sin formato APA</div>
+              </div>
+
+              <div class="compliance-panel">
+                <div class="compliance-panel__info">
+                  <span>Porcentaje de cumplimiento</span>
+                  <strong id="complianceValue">88%</strong>
+                </div>
+                <div class="bar bar--large"><span id="complianceBar" style="width: 88%"></span></div>
+              </div>
+
+              <div class="observations">
+                <h5>Recomendaciones automáticas</h5>
+                <ul>
+                  <li>Completar datos faltantes en citas parentéticas y narrativas.</li>
+                  <li>Normalizar la lista de referencias según autor, año, título y fuente.</li>
+                  <li>Revisar consistencia entre citas dentro del texto y bibliografía final.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Gestión de riesgos -->
+      <section class="view" id="riesgos">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Control del proyecto</p>
+            <h3>Gestión de riesgos</h3>
+          </div>
+          <span class="section-badge">Matriz resumida</span>
+        </div>
+
+        <article class="panel-card table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Riesgo identificado</th>
+                <th>Probabilidad</th>
+                <th>Impacto</th>
+                <th>Plan de mitigación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fallas técnicas en la interfaz</td>
+                <td>Media</td>
+                <td>Alta</td>
+                <td>Pruebas funcionales, revisión de compatibilidad y control de versiones.</td>
+              </tr>
+              <tr>
+                <td>Pérdida de información del proyecto</td>
+                <td>Baja</td>
+                <td>Alta</td>
+                <td>Respaldos periódicos y repositorio GitHub actualizado.</td>
+              </tr>
+              <tr>
+                <td>Retrasos en el cronograma</td>
+                <td>Alta</td>
+                <td>Media</td>
+                <td>Planificación por entregas, priorización de módulos y seguimiento semanal.</td>
+              </tr>
+              <tr>
+                <td>Errores en la validación simulada</td>
+                <td>Media</td>
+                <td>Media</td>
+                <td>Revisión de reglas de negocio y pruebas de interacción del usuario.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- Reportes -->
+      <section class="view" id="reportes">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Seguimiento de revisiones</p>
+            <h3>Reportes simulados</h3>
+          </div>
+          <span class="section-badge">Histórico</span>
+        </div>
+
+        <article class="panel-card table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Nivel de cumplimiento</th>
+                <th>Fecha de revisión</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Informe Final de Investigación</td>
+                <td>91%</td>
+                <td>01/06/2026</td>
+                <td><span class="tag success">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td>Ensayo de Métodos Ágiles</td>
+                <td>78%</td>
+                <td>28/05/2026</td>
+                <td><span class="tag warning">Con observaciones</span></td>
+              </tr>
+              <tr>
+                <td>Artículo sobre UX Educativo</td>
+                <td>84%</td>
+                <td>23/05/2026</td>
+                <td><span class="tag success">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td>Proyecto Integrador APA 7</td>
+                <td>69%</td>
+                <td>19/05/2026</td>
+                <td><span class="tag danger">Requiere ajustes</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- Acerca del proyecto -->
+      <section class="view" id="acerca">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Información institucional</p>
+            <h3>Acerca del proyecto</h3>
+          </div>
+          <span class="section-badge">Ficha académica</span>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel-card">
+            <h4>Objetivos</h4>
+            <p>Desarrollar un sistema web capaz de simular la automatización de la revisión y normalización de documentos académicos conforme a las normas APA 7.</p>
+          </article>
+
+          <article class="panel-card">
+            <h4>Alcance</h4>
+            <p>Validación visual de estructura del documento, análisis de citas y referencias, generación de métricas y paneles de seguimiento para estudiantes y docentes.</p>
+          </article>
+
+          <article class="panel-card">
+            <h4>Tecnologías utilizadas</h4>
+            <p>HTML5, CSS3, JavaScript, diseño responsive, estructura portable para GitHub y despliegue sencillo en Netlify.</p>
+          </article>
+
+          <article class="panel-card">
+            <h4>Integrantes del proyecto</h4>
+            <p><strong>David Martínez Giraldo</strong> · Líder del proyecto, Scrum Master, Product Owner y responsable de desarrollo.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-<h2>Descripción</h2>
-<p>Este sistema permite normalizar documentos bajo normas APA 7.</p>
-
-<h2>Problema</h2>
-<p>Los estudiantes cometen errores en normas APA.</p>
-
-<h2>Solución</h2>
-<p>Automatizar la corrección de documentos.</p>
